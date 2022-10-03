@@ -1,0 +1,6 @@
+-- SELECT * FROM offices WHERE city = 'San Francisco'
+-- SELECT * FROM orderdetails WHERE quantityOrdered >70 ORDER BY orderLineNumber ASC
+-- SELECT DISTINCT productLine FROM products
+-- SELECT customerNumber AS 'nomor', customerName AS 'nama' FROM customers WHERE customerNumber BETWEEN 100 AND 150
+-- SELECT * FROM customers WHERE country != 'USA' AND creditLimit = 0 ORDER BY customerName DESC LIMIT 10,10
+-- 
