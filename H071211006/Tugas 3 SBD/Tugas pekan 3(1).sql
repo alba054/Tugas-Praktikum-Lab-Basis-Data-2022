@@ -1,0 +1,49 @@
+-- USE db_praktikum;
+-- ALTER TABLE mahasiswa
+-- MODIFY no_telp VARCHAR(20) NOT NULL,
+-- MODIFY alamat VARCHAR(100),
+-- MODIFY email VARCHAR(50) NOT NULL,
+-- MODIFY keterangan VARCHAR(20);
+
+-- NOMOR 3
+-- INSERT INTO mahasiswa (nama, nim, jk, no_telp, email, alamat, keterangan)
+-- VALUE ("Nur Hikmah", "H071211006", "P", "082347289237", "hikmahnurrrrr@gmail.com", "Jln. Politeknik", "Semester 3"),
+--  ("Fadilah Istiqomah", "H071211023", "P", "086347289237", "dilla@gmail.com", "Jln. Perintis Kemerdekaan 03", "Semester 3"),
+--  ("Jonez Azarya", "H071211050", "L", "087634567", "jonez@gmail.com", "Jln. Politeknik", "Semester 3"),
+--  ("Reza Hasan", "H071211010", "L", "082347243", "Reza@gmail.com", "Jln Perintis Kemerdekaan 07", "Semester 3"),
+--  ("Indah Kurnia Ilahi", "H071211001", "P", "086312345", "indahr@gmail.com", "Jln. Sahabat 03", "Semester 3"),
+--  ("Bulqis Ramadani", "H071211011", "P", "084876543", "bulqisr@gmail.com", "Jln. Politeknik", "Semester 3"),
+--  ("Putri Aulia", "H071211046", "P", "08234234567", "putri@gmail.com", "Jln. Politeknik", "Semester 3"),
+--  ("Fathur Rahman Alamsyah", "H071211041", "L", "082123455678", "fatur@gmail.com", "Jln. Sahabat 02", "Semester 3"),
+--  ("Abdul Rafiq Anwar", "H071211029", "L", "082347345677", "rafiq@gmail.com", "BTP", "Semester 3"),
+--  ("Muhammad Khoibar", "H071211020", "L", "089234569237", "khoibar@gmail.com", "Takalar", "Semester 3"),
+--  ("Muhammad Nuril Muqid", "H071211034", "L", "08234723456", "nuril@gmail.com", "btn asal mula", "Semester 3"),
+--  ("Aflah alifu", "H071211021", "L", "08234345909", "aflah@gmail.com", "Jln. Politeknik", "Semester 3"),
+--  ("Selviani Amalia Kartika", "H071211003", "P", "081345678984", "selvi@gmail.com", "Jln. Veteran", "Semester 3"),
+--  ("Edgar Silfanus Limba", "H071211026", "L", "0863123456", "edgar@gmail.com", "BTP", "Semester 3"),
+--  ("Arjuna Ribal", "H071211032", "L", "08220987678", "arjuna@gmail.com", "Takalar", "Semester 3"),
+--  ("Stefany Frans Sarira", "H071211049", "P", "08134560978", "stefany@gmail.com", "Perdos", "Semester 3"),
+--  ("Dirgan", "H071211080", "L", "0833087654", "dirgan@gmail.com", "btn asal mula", "Semester 3"),
+--  ("Adelia Puspita Hilal", "H071211044", "P", "0871234780987", "adelia@gmail.com", "Jln. Perintis Kemerdekaan 07", "Semester 3"),
+--  ("Emha Fudhol Ismaulidin", "H071201090", "L", "0813456778984", "emha@gmail.com", "Jln. Veteran", "Semester 5");
+
+-- NOMOR 4
+-- INSERT INTO buku VALUE ("Bumi", "2014", "Tere Liye", "1"),
+-- ("Matahari", "2016", "Tere Liye", "2"),
+-- ("Ceroz dan Batozar", "2018", "Tere Liye", "3"),
+-- ("Nebula", "2019", "Tere Liye", "4"),
+-- ("SagaraS", "2022", "Tere Liye", "5");
+
+-- INSERT INTO pinjam VALUE ("2022-10-01 12:30:00", "57", "4", "1", "1"),
+-- ("2022-10-02 10:30:00", "57", "2", "1", "2"),
+-- ("2022-10-03 12:15:00", "58", "3", "0", "3"),
+-- ("2022-10-03 12:16:00", "58", "4", "0", "4"),
+-- ("2022-10-04 09:30:10", "62", "5", "0", "5");
+
+-- NOMOR 5
+-- blank
+-- INSERT INTO mahasiswa (nama, nim, jk, no_telp, email, alamat, keterangan)
+-- VALUE ("imma", "H071211094", "P", "087666432059", "",  "Pinrang", "Semester 3");
+-- null
+-- INSERT INTO mahasiswa (nama, nim, jk, no_telp, email, keterangan)
+-- VALUE ("mima", "H071211091", "P", "085123789665", "nhikmaabcd@gmial.com", "Semester 3");
