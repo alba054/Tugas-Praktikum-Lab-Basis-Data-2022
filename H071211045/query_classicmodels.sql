@@ -5,7 +5,7 @@ SELECT * FROM orderdetails;
 SELECT * FROM orders;
 SELECT * FROM products;
 
--- [NO. 1] Tampilkan kolom tanggal pemesanan product dalam urutan menurun untuk pesanan 1940 Ford Pickup Truck yang diambil dari order dengan metode JOIN
+-- [NO. 1] Tampilkan kolom tanggal pemesanan product dalam urutan menurun untuk pesanan Ford Pickup Truck 1940
 SELECT o.orderDate, od.orderNumber, p.productName
 FROM orders as o
 INNER JOIN orderdetails as od
@@ -15,7 +15,7 @@ ON od.productCode = p.productCode
 WHERE p.productName = '1940 Ford Pickup Truck'
 ORDER BY o.orderDate DESC;
 
--- [NO.2] Tampilkan daftar nama produk yang dijual dengan harga kurang dari 80% dari MSRP dari orderannya dengan JOIN
+-- [NO.2] Tampilkan daftar nama produk yang dijual dengan harga kurang dari 80% dari MSRP
 SELECT DISTINCT p.productName, p.buyPrice, p.MSRP
 FROM products as p
 INNER JOIN orderdetails as od
@@ -25,6 +25,7 @@ ON od.orderNumber = o.orderNumber
 WHERE od.priceEach < (p.MSRP * 0.8);
 
 -- [NO.4]
+
 -- Buatlah kolom baru dengan nama status yang bertipe data varchar pada tabel customers
 ALTER TABLE customers
 ADD `status` varchar(255);
@@ -59,6 +60,7 @@ WHERE status IS NULL;
 select * FROM customers;
 
 -- [NO.5] 
+
 -- Tampilkan semua data pelanggan yang pernah membatalkan pesanannya
 SELECT c.customerName, o.status
 FROM customers as c
