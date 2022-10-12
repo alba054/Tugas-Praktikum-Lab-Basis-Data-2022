@@ -68,6 +68,17 @@ INNER JOIN orders as o
 ON c.customerNumber = o.customerNumber
 WHERE o.status = 'Cancelled';
 
+-- Menghapus data pelanggan
+DELETE c
+FROM customers as c
+INNER JOIN orders as o
+ON c.customerNumber = o.customerNumber
+WHERE o.status = 'Cancelled';
+
+-- Mengecek kembali data tersebut
+SELECT * FROM customers;
+SELECT * FROM orders;
+
 -- Hapus & Menambah kembali Constraints nya
 -- ALTER TABLE orders
 -- DROP FOREIGN KEY `orders_ibfk_1`;
@@ -82,15 +93,3 @@ WHERE o.status = 'Cancelled';
 -- ALTER TABLE customers
 -- DROP FOREIGN KEY `customers_ibfk_1` FOREIGN KEY (`customerNumber`)
 -- REFERENCES `orders` (`customerNumber`) ON DELETE CASCADE;
-
--- Menghapus data pelanggan
-DELETE c
-FROM customers as c
-INNER JOIN orders as o
-ON c.customerNumber = o.customerNumber
-WHERE o.status = 'Cancelled';
-
--- Mengecek kembali data tersebut
-SELECT * FROM customers;
-SELECT * FROM orders;
-
