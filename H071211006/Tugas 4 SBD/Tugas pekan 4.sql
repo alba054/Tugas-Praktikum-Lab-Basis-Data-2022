@@ -69,3 +69,4 @@ SELECT * FROM customers;
 -- INNER JOIN orders
 -- ON customers.customerNumber = orders.customerNumber
 -- WHERE orders.`status` = "Cancelled";
+--
