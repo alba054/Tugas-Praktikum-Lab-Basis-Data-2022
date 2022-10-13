@@ -17,7 +17,7 @@ WHERE orderdetails.priceEach < 0.8 * products.MSRP;
 
 -- nomor 3
 USE appseminar;
-SELECT d.nama, m.nama
+SELECT d.nama AS "Pembimbing Utama", m.nama AS "Mahasiswa"
 FROM ss_mahasiswa AS m
 INNER JOIN ss_pembimbing AS p
 ON m.id_mahasiswa = p.id_mahasiswa
