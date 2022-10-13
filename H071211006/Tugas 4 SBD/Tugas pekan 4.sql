@@ -9,7 +9,7 @@ ON od.productCode = p.productCode
 WHERE p.productName = "1940 Ford Pickup Truck" ORDER BY o.orderDate DESC;
 
 -- nomor 2
-SELECT products.productName, orderdetails.priceEach, products.MSRP, 0.8 * products.MSRP
+SELECT products.productName, products.MSRP, 0.8 * products.MSRP
 FROM products
 INNER JOIN orderdetails
 ON products.productCode = orderdetails.productCode
@@ -27,8 +27,9 @@ WHERE m.nama = "sulaeman";
 
 -- nomor 4
 USE classicmodels;
-ALTER TABLE customers
-ADD COLUMN status VARCHAR(255);
+-- ALTER TABLE customers
+-- ADD COLUMN status VARCHAR(255);
+-- 
 UPDATE customers
 INNER JOIN payments 
 ON customers.customerNumber = payments.customerNumber
@@ -44,29 +45,39 @@ SET customers.status = 'Reguler'
 WHERE STATUS IS NULL;
 
 SELECT * FROM customers;
--- 
--- -- nomor 5
 
--- alter table orders drop
--- CONSTRAINT orders_ibfk_1;
+-- nomor 5
+ALTER TABLE orders DROP
+CONSTRAINT `orders_ibfk_1`;
 
--- alter table orderdetails drop
--- CONSTRAINT `orderdetails_ibfk_1`;
--- 
--- alter table payments drop
--- CONSTRAINT `payments_ibfk_1`;
--- 
--- alter table orders add constraint orders_ibfk_1
--- foreign key (orderNumber) REFERENCES orderdetails(orderNumber);
--- 
--- alter table orderdetails add constraint orderdetails_ibfk_1
--- foreign key (orderNumber) REFERENCES orders(orderNumber);
--- 
--- alter table payments add constraint `payments_ibfk_1`
--- foreign key (customerNumber) REFERENCES customers(customerNumber);
--- 
--- DELETE customers FROM customers
--- INNER JOIN orders
--- ON customers.customerNumber = orders.customerNumber
--- WHERE orders.`status` = "Cancelled";
---
+ALTER TABLE orders 
+ADD CONSTRAINT orders_ibfk_1
+FOREIGN KEY (customerNumber) REFERENCES customers(customerNumber)
+ON DELETE CASCADE; 
+
+ALTER TABLE orderdetails DROP
+CONSTRAINT `orderdetails_ibfk_1`;
+
+ALTER TABLE orderdetails 
+ADD CONSTRAINT `orderdetails_ibfk_1`
+FOREIGN KEY (orderNumber) REFERENCES orders(orderNumber)
+ON DELETE CASCADE; 
+
+ALTER TABLE payments DROP
+CONSTRAINT `payments_ibfk_1`; 
+
+ALTER TABLE payments 
+ADD CONSTRAINT `payments_ibfk_1`
+FOREIGN KEY (customerNumber) REFERENCES customers(customerNumber)
+ON DELETE CASCADE;
+
+DELETE customers FROM customers
+INNER JOIN orders ON customers.customerNumber = orders.customerNumber
+WHERE orders.`status` = "Cancelled";
+
+SELECT * FROM customers 
+INNER JOIN orders ON orders.customerNumber = customers.customerNumber
+WHERE orders.`status` = "Cancelled";
+
+SELECT * FROM orders
+WHERE orders.`status` ="Cancelled";
