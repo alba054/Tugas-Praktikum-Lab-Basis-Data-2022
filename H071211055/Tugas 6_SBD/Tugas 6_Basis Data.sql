@@ -60,9 +60,15 @@ having `pendapatan - modal = keuntungan` > 500
 order by sum(od.quantityOrdered * od.priceEach) - sum(od.quantityOrdered * p.buyPrice) desc;
 
 -- no  5 :
--- select o.addressLine1 as 'Alamat', right(o.phone) as ' Nomor Telp', sum(e.employeeNumber) as 'Jumlah Karyawan', 
--- sum(c.customerNumber) as 'Jumlah Pelanggan', avg(amount)
--- from offices as o
+select ofc.addressLine1 as 'alamat', concat(left(ofc.phone,char_length(ofc.phone)-6), "* **") as 'no.telp', count(distinct e.employeeNumber) as 'Jumlah Karyawan', count(distinct c.customerNumber) as 'Jumlah Pelanggan', round(avg(p.amount),2) as 'rata-rata penghasilan'
+from offices as ofc
+left join employees as e
+on e.officeCode = ofc.officeCode
+left join customers as c
+on c.salesRepEmployeeNumber = e.employeeNumber
+left join payments as p 
+on c.customerNumber = p.customerNumber
+group by ofc.addressLine1 order by `rata-rata penghasilan` asc;
 
 
 
