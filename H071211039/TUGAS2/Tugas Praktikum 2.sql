@@ -1,0 +1,7 @@
+-- SELECT * FROM offices WHERE city = "san francisco"; 
+-- SELECT * FROM orderdetails WHERE quantityOrdered > 70 ORDER BY orderLineNumber DESC
+-- SELECT DISTINCT productLine FROM products
+-- SELECT customerNumber AS nomor_pelanggan, customerName AS nama_pelanggan FROM customers ORDER BY nomor_pelanggan ASC LIMIT 99,151;
+-- SELECT customerNumber AS nomor_pelanggan, customerName AS nama_pelanggan FROM customers WHERE customerNumber >100 AND customerNumber <150
+-- select *from customers where country!="usa" and creditLimit= 0 order by customerName desc limit 9,10
+-- desc customers;
