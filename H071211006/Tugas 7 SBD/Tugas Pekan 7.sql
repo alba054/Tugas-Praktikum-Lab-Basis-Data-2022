@@ -76,8 +76,8 @@ ON c.salesRepEmployeeNumber = e.employeeNumber
 GROUP BY orderNumber
 HAVING SUM(priceEach * quantityOrdered) =
 	(SELECT MAX(biayaPesanan.orderTotal)
- 	FROM 
- 		(SELECT SUM(priceEach * quantityOrdered) AS 'orderTotal'
+	FROM 
+		(SELECT SUM(priceEach * quantityOrdered) AS 'orderTotal'
  		FROM orderdetails
  		GROUP BY orderNumber
  		) AS biayaPesanan
@@ -88,4 +88,4 @@ SELECT DISTINCT country AS 'Negara', LENGTH(country) AS 'Panjang Karakter'
 FROM customers
 WHERE LENGTH(country) = (
 	SELECT MAX(LENGTH(country)) AS 'Terpanjang' FROM customers)
-    OR LENGTH(country) = (SELECT MIN(LENGTH(country)) AS 'Terpendek' FROM customers);
+   OR LENGTH(country) = (SELECT MIN(LENGTH(country)) AS 'Terpendek' FROM customers);
