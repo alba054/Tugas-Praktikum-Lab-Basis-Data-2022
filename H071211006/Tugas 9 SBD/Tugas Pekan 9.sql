@@ -1,21 +1,8 @@
 USE classicmodels;
 SET autocommit = 0; 
--- Nomor 1
-SELECT * FROM orders
--- WHERE customerNumber = 382;
--- SELECT * FROM orderdetails;
 
 -- Nomor 1
--- BEGIN;
--- INSERT INTO orders
--- VALUE (10426, '2022-11-10', '2022-11-20', '2022-11-20', 'In Process', NULL, 382), 
--- 		(10427, '2022-11-10', '2022-11-20', '2022-11-20', 'In Process', NULL, 282),
--- 		(10428, '2022-11-10', '2022-11-20', '2022-11-20', 'In Process', NULL, 124);
--- INSERT INTO orderdetails
--- VALUE (10426, 'S18_1749', '30', NULL, NULL),
--- 		(10427, 'S18_2248', '30', NULL, NULL),
--- 		(10428, 'S18_4409', '20', NULL, NULL);usersusers
--- COMMIT;
+SELECT * FROM orders
 
 BEGIN;
 
