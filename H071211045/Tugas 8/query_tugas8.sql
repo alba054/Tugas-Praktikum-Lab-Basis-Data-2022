@@ -55,4 +55,3 @@ WHERE t.name like 'L%'
 GROUP BY t.city
 order by count(*) desc
 limit 1;
-
