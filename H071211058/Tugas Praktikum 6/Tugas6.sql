@@ -1,3 +1,5 @@
+-- USE classicmodels;
+
 -- Nomor 1
 SELECT c.customerName AS Nama_Pelanggan, SUM(p.amount) AS Total_Belanja, c.creditLimit AS Batas_Kredit, SUM(p.amount) - c.creditLimit AS Selisih
 FROM customers AS c
@@ -5,7 +7,8 @@ INNER JOIN payments AS p
 ON c.customerNumber = p.customerNumber
 GROUP BY Nama_Pelanggan
 HAVING Total_Belanja > Batas_Kredit
-ORDER BY Selisih DESC;
+ORDER BY Selisih DESC
+LIMIT 5;
 
 
 -- Nomor 2
